@@ -12,7 +12,7 @@ export default function Calculator(){
 
     <div className="calculator-body">
       <div className="lcd">
-           <p>{input}</p> 
+           <p className="lcd-numbers">{input}</p> 
       </div>
 
    <div className="button-container">
