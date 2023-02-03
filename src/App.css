@@ -1,9 +1,14 @@
+button:active{
+  transform: scale(0.9);
+  transition: 0.2s;
+}
+
 button:hover{
-  transform: scale(1.05);
-  transition: 0.3s;
+  background-color: lightblue;
 }
 
 button{
+  
   height: 50px;
   width: 24%;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -12,6 +17,9 @@ button{
   font-size: 30px;
   justify-content: center;
   border-radius: 10%;
+  box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.75);
 }
 p{
   height: 30px;
@@ -33,16 +41,14 @@ background-color: beigeå;
 }
 
 .flex-container{
- 
-            display:flex;
-         
-            justify-content: center;
-
-
+  display:flex;      
+  justify-content: center;
 }
+
 .calculator-body{
  
 border: 3px solid black;
+background-color: silver;
 border-radius: 10%;
 height: 450px;
 width: 400px;
@@ -59,14 +65,15 @@ width: 400px;
   
 
 }
+
 .lcd{
-  border: 3px  black dashed;
+  border: 3px  black solid;
   text-align: right;
   margin-left: 30px;
   margin-right: 30px;
   margin-top: 30px;
   background-color:#a1d1a1;
-  border-radius: 15%;
+  border-radius: 5%;
 }
 
 .lcd-numbers{
@@ -87,7 +94,7 @@ width: 400px;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #0055ff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

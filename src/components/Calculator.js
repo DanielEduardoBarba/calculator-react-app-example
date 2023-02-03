@@ -1,4 +1,9 @@
 import React, {useState} from "react";
+import click from "../assets/click.wav"
+
+function playSound(){
+  new Audio(click).play()
+}
 
 export default function Calculator(){
     const [input, setInput] = useState("")
@@ -15,7 +20,7 @@ export default function Calculator(){
            <p className="lcd-numbers">{input}</p> 
       </div>
 
-   <div className="button-container">
+   <div className="button-container" onClick={playSound}>
         <div>
           <button onClick={()=>{
               AddToinput(setInput,input,7)
@@ -122,6 +127,6 @@ export default function Calculator(){
 }
 
 function AddToinput( setPass, pass="", value=""){
-  
-      setPass(pass.toString()+value.toString())
+
+      if(pass.length < 15 ) setPass(pass.toString()+value.toString())
 }
