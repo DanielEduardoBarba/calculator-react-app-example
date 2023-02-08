@@ -52,6 +52,9 @@ background-color: silver;
 border-radius: 10%;
 height: 450px;
 width: 400px;
+box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.5);
+-webkit-box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.5);
 
 }
 
@@ -70,6 +73,9 @@ width: 400px;
   margin-top: 30px;
   background-color:#a1d1a1;
   border-radius: 10px;
+  box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.5);
 }
 
 .lcd-numbers{
