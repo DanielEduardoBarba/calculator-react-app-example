@@ -35,10 +35,7 @@ export default function Calculator(){
             }}>9</button>
 
             <button onClick={()=>{
-              setOldInput(input)
-              setInput(undefined)
-              setOperator("+")
-            
+              safeSetOperator(setOldInput,input,setInput,operator,setOperator,"+")
             }}>+</button>
             
         </div>
@@ -55,9 +52,7 @@ export default function Calculator(){
               AddToinput(setInput,input,6)
             }}>6</button>
              <button onClick={()=>{
-              setOldInput(input)
-              setInput(undefined)
-              setOperator("-")
+               safeSetOperator(setOldInput,input,setInput,operator,setOperator,"-")
             }}>-</button>
         </div>
         <div>
@@ -75,9 +70,7 @@ export default function Calculator(){
             
 
             <button onClick={()=>{
-              setOldInput(input)
-              setInput(undefined)
-              setOperator("*")
+              safeSetOperator(setOldInput,input,setInput,operator,setOperator,"*")  
             }}>x</button>
 
         </div>
@@ -87,13 +80,12 @@ export default function Calculator(){
             }}>0</button>
 
             <button onClick={()=>{
-              AddToinput(setInput,input,".")
+              if(!input)setInput("0.")
+              if(!input.includes("."))AddToinput(setInput,input,".")
             }}>.</button>
 
             <button onClick={()=>{
-              setOldInput(input)
-              setInput(undefined)
-              setOperator("/")
+            safeSetOperator(setOldInput,input,setInput,operator,setOperator,"/")
             }}>/</button>
             
             <button onClick={()=>{
@@ -105,7 +97,6 @@ export default function Calculator(){
             
               setOldInput(undefined)
               setOperator(undefined)
-              //setAnswer(calc)
               setInput(calc)
             }}>=</button>
         </div>
@@ -123,7 +114,15 @@ export default function Calculator(){
   </div>
 </div>
         </>
-    )
+    )}
+            
+function safeSetOperator(setOld, New, setNew, op, setOp, opType){
+  if(op==="") setOp(opType)
+  else if(op!=opType){
+    setOp(opType)
+    setOld(New)
+    setNew(undefined)
+    }
 }
 
 function AddToinput( setPass, pass="", value=""){
